@@ -43,6 +43,12 @@ struct InfoVendedor {
 int main(){
     int opcion;
     do {
+    FILE *archivo;
+    archivo = fopen("/home/mrkev/Documentos/Documentos/Archivos/Documentos/Documents/UACH/LENGUAJE DE PROGRAMACION II/ARCHIVOS/Parcial 3/Lenguaje_Programacion_II","w");
+    if (archivo == NULL) {
+        printf("Error al abrir el archivo.\n");
+        return 1;  // Retornar 1 en caso de error
+    }
     limpiarPantalla();
     printf("CREACION DE LA FACTURA\n\n");
     printf("\nIngresar los Productos a Vender = 1");
@@ -59,11 +65,25 @@ int main(){
         printf("SISTEMA DE AGREGAR PRODUCTOS\n");
         getchar();
         break;
+    case 2:
+        limpiarPantalla();
+        printf("SISTEMA DE AGREGAR AL VENDEDOR\n");
+        break;
     case 3:
         limpiarPantalla();
         printf("SISTEMA DE AGREGAR AL CLIENTE\n");
         break;
+    case 4:
+        limpiarPantalla();
+        printf("CONSULTAR LA FACTURA\n");
+        break;
+    case 5:
+        limpiarPantalla();
+        printf("CONSULTAR LAS FACTURAS CREADAS\n");
+        break;
     case 6:
+        limpiarPantalla();
+        printf("FACTURA/S CREADA/S CORRECTAMENTE Y GUARDADAS EXITOSAMENTE");
         break;
     default:
         limpiarPantalla();
@@ -71,7 +91,7 @@ int main(){
         getchar();
         break;
     }
-    } while (opcion != 5);
+    } while (opcion != 6);
     
     return 0;
 }
