@@ -1,8 +1,31 @@
 #include <stdio.h>
+#include <unistd.h>
+
+#ifdef _WIN32
+#include <windows.h>
+#endif
+
+#ifdef __unix__
+#include <unistd.h>
+#endif
+
+void limpiarPantalla() {
+    // Si estamos en Windows
+    #ifdef _WIN32
+        system("cls");
+    #endif
+
+    // Si estamos en sistemas UNIX
+    #ifdef __unix__
+        printf("\033[2J\033[1;1H"); // Secuencia de escape ANSI para limpiar la pantalla
+    #endif
+}
+
+
 //Funcion Main
 struct InfoClientes{
-    char Nombre[50]; //Nombre Completo
-    int Numero; // Numero del Cliente
+    char NombreC[50]; //Nombre Completo
+    int NumeroC; // Numero del Cliente
     char Calle[30]; //Nombre de la calle 
     int NumCasa; // Numero de la casa del cliente
     char Colonia[20]; //Colonia donde vive
@@ -11,22 +34,43 @@ struct InfoClientes{
     int Telefono;
 
 };
-struct InfoVendedor
-{
-    /* data */
+struct InfoVendedor {
+    int NumeroV;
+    char NombreV[50];
 };
 
 
 int main(){
     int opcion;
     do {
+    limpiarPantalla();
     printf("CREACION DE LA FACTURA\n\n");
     printf("\nIngresar los Productos a Vender = 1");
-    printf("\nAgregar la Informacion del Cliente = 2");
-    printf("\nConsultar Una Factura = 3");
-    printf("\nConsultar Todas Las Facturas = 4");
-    printf("\nSalir = 5");
+    printf("\nAgregar la Informacion del Vendedor = 2");
+    printf("\nAgregar la Informacion del Cliente = 3");
+    printf("\nConsultar Una Factura = 4");
+    printf("\nConsultar Todas Las Facturas = 5");
+    printf("\nSalir = 6");
     printf("\n\nIngrese La Opcion: ");
+    scanf("%d",&opcion);
+    switch (opcion){
+    case 1:
+        limpiarPantalla();
+        printf("SISTEMA DE AGREGAR PRODUCTOS\n");
+        getchar();
+        break;
+    case 3:
+        limpiarPantalla();
+        printf("SISTEMA DE AGREGAR AL CLIENTE\n");
+        break;
+    case 6:
+        break;
+    default:
+        limpiarPantalla();
+        printf("Opcion Incorrecta\n\n");
+        getchar();
+        break;
+    }
     } while (opcion != 5);
     
     return 0;
