@@ -25,7 +25,6 @@ void limpiarPantalla() {
 //Funcion Main
 struct InfoClientes{
     char NombreC[50]; //Nombre Completo
-    int NumeroC; // Numero del Cliente
     char Calle[30]; //Nombre de la calle 
     int NumCasa; // Numero de la casa del cliente
     char Colonia[20]; //Colonia donde vive
@@ -41,7 +40,10 @@ struct InfoVendedor {
 
 
 int main(){
+    InfoClientes Clientes;
+    InfoVendedor Vendedor;
     int opcion;
+
     do {
     FILE *archivo;
     archivo = fopen("/home/mrkev/Documentos/Documentos/Archivos/Documentos/Documents/UACH/LENGUAJE DE PROGRAMACION II/ARCHIVOS/Parcial 3/Lenguaje_Programacion_II","w");
@@ -62,32 +64,42 @@ int main(){
     switch (opcion){
     case 1:
         limpiarPantalla();
-        printf("SISTEMA DE AGREGAR PRODUCTOS\n");
+        printf("\t\tSISTEMA DE AGREGAR PRODUCTOS\n");
+//Aqui hay que añadir el que hicimos con Victor ;)
         getchar();
         break;
     case 2:
         limpiarPantalla();
-        printf("SISTEMA DE AGREGAR AL VENDEDOR\n");
+        printf("\t\tSISTEMA DE AGREGAR AL VENDEDOR\n");
+        printf("Ingrese el nombre del vendedor: ");
+        scanf("%s",Vendedor.NombreV);
+        printf("\nIngrese el numero del vendedor: ");
+        scanf("%d",&Vendedor.NumeroV);
         break;
     case 3:
         limpiarPantalla();
-        printf("SISTEMA DE AGREGAR AL CLIENTE\n");
+        printf("\t\tSISTEMA DE AGREGAR AL CLIENTE\n");
+        printf("Ingrese el nombre del cliente: ");
+        scanf("%s",Clientes.NombreC);
+        printf("\nIngrese el telefono del cliente: ");
+        scanf("%d",&Clientes.Telefono);
+        
         break;
     case 4:
         limpiarPantalla();
-        printf("CONSULTAR LA FACTURA\n");
+        printf("\t\tCONSULTAR LA FACTURA\n");
         break;
     case 5:
         limpiarPantalla();
-        printf("CONSULTAR LAS FACTURAS CREADAS\n");
+        printf("\t\tCONSULTAR LAS FACTURAS CREADAS\n");
         break;
     case 6:
         limpiarPantalla();
-        printf("FACTURA/S CREADA/S CORRECTAMENTE Y GUARDADAS EXITOSAMENTE");
+        printf("\t\tFACTURA/S CREADA/S CORRECTAMENTE Y GUARDADAS EXITOSAMENTE");
         break;
     default:
         limpiarPantalla();
-        printf("Opcion Incorrecta\n\n");
+        printf("\t\tOpcion Incorrecta\n\n");
         getchar();
         break;
     }
