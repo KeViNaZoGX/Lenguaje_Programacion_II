@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <unistd.h>
 
+//Funciones para Windows
 #ifdef _WIN32
 #include <windows.h>
 #endif
-
+//Funciones para Linux
 #ifdef __unix__
 #include <unistd.h>
 #endif
