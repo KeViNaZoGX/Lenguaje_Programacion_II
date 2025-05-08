@@ -1,7 +1,13 @@
 #include <stdio.h>
 #include <unistd.h>
+//#include <windows.h>
 
+
+//Kevin Olivas 358825
+//Erick Jaquez 374343
+//Alexis Quirarte 374223
 //Funciones para Windows
+
 #ifdef _WIN32
 #include <windows.h>
 #endif
