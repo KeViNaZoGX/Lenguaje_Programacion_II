@@ -57,12 +57,6 @@ int main(){
     int opcion;
 
     do {
-    FILE *archivo;
-    archivo = fopen("/home/mrkev/Documentos/Documentos/Archivos/Documentos/Documents/UACH/LENGUAJE DE PROGRAMACION II/ARCHIVOS/Parcial 3/Lenguaje_Programacion_II","w");
-    if (archivo == NULL) {
-        printf("Error al abrir el archivo.\n");
-        return 1;  // Retornar 1 en caso de error
-    }
     limpiarPantalla();
     printf("CREACION DE LA FACTURA\n\n");
     printf("\nIngresar los Productos a Vender = 1");
