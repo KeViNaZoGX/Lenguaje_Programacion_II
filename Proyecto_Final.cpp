@@ -7,7 +7,10 @@
 //Erick Jaquez 374343
 //Alexis Quirarte 374223
 //Funciones para Windows
-
+// HOLA 
+void Prueba(
+    int a    
+)
 #ifdef _WIN32
 #include <windows.h>
 #endif
@@ -51,14 +54,13 @@ int main(){
     InfoVendedor Vendedor;
     int opcion;
 
-    /*
+    do {
     FILE *archivo;
-    //archivo = fopen("/home/mrkev/Documentos/Documentos/Archivos/Documentos/Documents/UACH/LENGUAJE DE PROGRAMACION II/ARCHIVOS/Parcial 3/Lenguaje_Programacion_II","w");
+    archivo = fopen("/home/mrkev/Documentos/Documentos/Archivos/Documentos/Documents/UACH/LENGUAJE DE PROGRAMACION II/ARCHIVOS/Parcial 3/Lenguaje_Programacion_II","w");
     if (archivo == NULL) {
         printf("Error al abrir el archivo.\n");
         return 1;  // Retornar 1 en caso de error
-    }*/
-    do{
+    }
     limpiarPantalla();
     printf("CREACION DE LA FACTURA\n\n");
     printf("\nIngresar los Productos a Vender = 1");

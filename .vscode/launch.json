@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/ERICK/Downloads/PROGRA/Lenguaje_Programacion_II",
+      "program": "/Users/ERICK/Downloads/PROGRA/Lenguaje_Programacion_II/build/Debug/outDebug"
+    }
+  ]
+}
