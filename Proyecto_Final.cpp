@@ -11,6 +11,8 @@
 void Prueba(
     int a    
 )
+
+//Esto es para indentificar si es sistema Windows o Linux
 #ifdef _WIN32
 #include <windows.h>
 #endif
